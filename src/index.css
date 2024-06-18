@@ -1,0 +1,276 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.settings-page {
+  margin: 40px;
+  margin-left: 6%;
+  margin-right: 6%;
+}
+
+.settings-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+  font-size: 20px;
+}
+
+.settings-back-arrow-link {
+  margin-right: 23px;
+}
+
+.settings-back-arrow-icon {
+  width: 20px; /* Adjust size as needed */
+  height: 20px; /* Adjust size as needed */
+  cursor: pointer; /* Add cursor pointer */
+}
+
+.settings-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.settings-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 5px 0;
+  padding: 20px;
+  border-bottom: 1px solid #ccc; /* Add a bottom border for separation */
+}
+
+.settings-option:last-child {
+  border-bottom: none;
+}
+
+.settings-icon {
+  width: 50px; /* Adjust size as needed */
+  height: 50px; /* Adjust size as needed */
+  margin-right: 10px;
+}
+
+.settings-details {
+  flex-grow: 1;
+  font-size: 18px;
+}
+
+.settings-option label {
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.settings-option p {
+  padding-top: 5px;
+  margin: 0;
+  color: #555;
+}
+
+.settings-option input[type="checkbox"],
+.settings-option select {
+  margin-left: auto; /* Push to the right */
+}
+
+.settings-option a {
+  color: inherit;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.settings-right-arrow-icon {
+  width: 20px; /* Adjust size as needed */
+  height: 20px; /* Adjust size as needed */
+  margin-left: 10px; /* Add some margin to the left */
+}
+
+/* Toggle Switch Styles */
+.settings-toggle-switch {
+  position: relative;
+  width: 80px; /* Increased width */
+  height: 40px; /* Increased height */
+  margin-left: auto;
+}
+
+.settings-toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.settings-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 34px;
+  border: 1px solid black;
+}
+
+.settings-slider:before {
+  position: absolute;
+  content: "";
+  height: 36px; /* Match the slider height */
+  width: 36px; /* Match the slider width */
+  left: 2px; /* Adjusted to align with border */
+  bottom: 2px; /* Adjusted to align with border */
+  background-color: white;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+input:checked + .settings-slider {
+  background-color: green;
+}
+
+input:checked + .settings-slider:before {
+  transform: translateX(40px); /* Adjust to move all the way to the right */
+}
+
+/* Language Dropdown Styles */
+.settings-language-dropdown {
+  position: relative;
+  width: 20%;
+}
+
+.settings-language-dropdown select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  background-color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  outline: none;
+}
+
+.settings-language-dropdown::after {
+  content: '\25BC'; /* Unicode for down arrow */
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  color: #555;
+  pointer-events: none;
+}
+
+.settings-language-dropdown select option {
+  padding: 10px;
+  margin: 5px 0; /* Add space between options */
+}
+
+.settings-language-dropdown select option:checked {
+  background-color: green; /* Green background for selected option */
+  color: white; /* White text color for selected option */
+}
+
+.settings-language-dropdown select option:hover {
+  background-color: transparent; /* Remove blue background on hover */
+}
+
+.settings-language-dropdown select:focus + .settings-custom-arrow::after {
+  animation: rotateDown 0.4s ease-in-out forwards;
+}
+
+@keyframes rotateDown {
+  from {
+    transform: translateY(-50%) rotate(0deg);
+  }
+  to {
+    transform: translateY(-50%) rotate(180deg);
+  }
+}
+
+.change-password {
+  margin: 40px;
+  margin-left: 6%;
+  margin-right: 6%;
+}
+
+.change-password-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+  font-size: 24px;
+}
+
+.back-arrow-icon {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+.change-password-instruction {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.input-wrapper input {
+  flex-grow: 1;
+  border: none;
+  outline: none;
+  padding: 10px;
+}
+
+.lock-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.forgot-password-link {
+  display: block;
+  margin-top: 5px;
+  font-size: 14px;
+  color: green;
+  text-decoration: none;
+}
+
+.update-password-button {
+  background-color: green;
+  color: white;
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.update-password-button:hover {
+  background-color: darkgreen;
+}
